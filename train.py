@@ -86,7 +86,7 @@ y = df0["MEDV"]
 # In[15]:
 
 
-X_train,X_test,y_train,y_test = train_test_split(X,y,test_size=0.2)
+X_train,X_test,y_train,y_test = train_test_split(X,y,test_size=0.3)
 
 
 # In[16]:
@@ -131,7 +131,7 @@ run['mse'].log(mse)
 run['rmse'].log(rmse)
 run['r2'].log(r2)
 
-run['model/pickled_model'].upload(File.as_pickle(model.pkl))
+run['model/pickled_model'].upload(File.as_pickle(model))
               
 
 #neptune.append_tag('ci-pipeline', os.getenv('NEPTUNE_EXPERIMENT_TAG_ID'))
